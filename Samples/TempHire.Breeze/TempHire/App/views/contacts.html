@@ -1,0 +1,52 @@
+﻿<section data-bind="with: staffingResource">
+    <table>
+        <tr>
+            <td>
+                <div data-bind="foreach: addresses">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><span data-bind="text: addressType().displayName"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Address 1:</td>
+                                <td><input data-bind="value: address1"/></td>
+                            </tr>
+                            <tr>
+                                <td>Address 2:</td>
+                                <td><input data-bind="value: address2"/></td>
+                            </tr>
+                            <tr>
+                                <td>City:</td>
+                                <td><input data-bind="value: city"/></td>
+                            </tr>
+                            <tr>
+                                <td>State:</td>
+                                <td><select data-bind="options: $root.states, optionsText: 'name', optionsValue: 'id', value: stateId"></select></td>
+                            </tr>
+                            <tr>
+                                <td>Zipcode:</td>
+                                <td><input data-bind="value: zipcode"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <table>
+                        <tbody data-bind="foreach: phoneNumbers">
+                            <tr>
+                                <td><span data-bind="text: phoneNumberType().name"></span></td>
+                                <td><input data-bind="value: areaCode"/></td>
+                                <td><input data-bind="value: number"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>
